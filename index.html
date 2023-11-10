@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lightbox.css"
+
+</head>
+<body>
+    <div class="scroll-to-top" id="scrollToTop">
+        <a href="#home-section"><i class="fas fa-arrow-up"></i></a>
+    </div>
+    
+    <div class="hero">
+       <nav>
+            <img src="images/logo.png" alt="Logo" id="home-section"> 
+            <ul>
+                <li><a href="#home-section">HOME</a></li>
+                <li><a href="#image-section">ABOUT</a></li>
+                <li><a href="#video-section">VLOG</a></li>
+                <li><a href="#map-section">LOCATION</a></li>
+                <li><a class="btn" href="#" onclick="openPopup()">CONTACT INFO</a></li>
+                <li><a class="btn" href="#"onclick="startBackgroundMusic()">PLAY MUSIC</a></li>
+
+            </ul>
+            <audio id="backgroundMusic" autoplay loop>
+                <source src="bg_music.mp3" type="audio/mpeg">
+            </audio>
+        </nav>
+        <div class="detail">
+            <h1>I'm Hansen <span>Planga</span></h1>
+            <h5>BSIT 2-1</h5>
+            <p>
+                <br>“I don’t know what the dream is that you have. 
+                <br>I don’t care how far-fetched it might appear to be. 
+                <br>I don’t care how disappointing it might have been as 
+                <br>you’ve been working toward that dream. But here’s what I know. 
+                <br>That dream that you’re holding in your mind, that it’s possible.
+                <br>What if all of us took that attitude after we face a rejection and 
+                <br>a no, or we have a meeting and no one shows up? Or somebody says, 
+                <br>“You can count on me.” And they don’t come through. 
+                <br>What if we had that kind of attitude? The car’s repossessed. 
+                <br>Nobody believes in you. You’ve lost again, and again, and again. 
+                <br>The lights are cut off, but you still are looking at your dream, 
+                <br>reviewing it every day and say to yourself, 
+                <br>“It’s not over until I win.”
+            </p>
+            
+                <div class="popup" id="popup">
+                    <h2>CONTACT INFORMATION</h2>
+                    <div class="wrapper">
+                        <div class="button">
+                            <h2>FB: <br>Hansen</h2>
+                        </div>
+                        <div class="button">
+                            <h2>Gmail: <br>hansenplanga22@gmail.com</h2>
+                        </div>
+                        <div class="button">
+                            <h2>Phone :<br>(+63)953-338-0853</h2>
+                        </div>
+                    </div>
+                    <button type="button" onclick="closePopup()">OK</button>
+                </div>
+
+            <script>
+                let popup = document.getElementById("popup");
+
+                function openPopup() {
+                    popup.classList.add("open-popup");
+                }
+
+                function closePopup() {
+                    popup.classList.remove("open-popup");
+                }
+
+                function startBackgroundMusic() {
+                    const backgroundMusic = document.getElementById("backgroundMusic");
+                    backgroundMusic.play();
+                }
+
+
+                const scrollToTopButton = document.getElementById("scrollToTop");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            scrollToTopButton.classList.add("show");
+        } else {
+            scrollToTopButton.classList.remove("show");
+        }
+    });
+
+    scrollToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
+            </script>
+        </div>
+        <div class="images">
+            <img src="images/shape.png" class="shape">
+            <img src="images/booy.png" class "boy">
+        </div>
+    </div>
+    <div class="image-section" id="image-section">
+    <div class="containers">
+        <div class="gallery">
+            <a href="images/1.jpg" data-lightbox="models" data-title="Me and my Friends">  
+                <img src="images/1.jpg"> 
+            </a>
+            <a href="images/2.jpg" data-lightbox="models" data-title="Sunrise in Sea">  
+                <img src="images/2.jpg"> 
+            </a>
+            <a href="images/3.jpg" data-lightbox="models" data-title="Groomsman">  
+                <img src="images/3.jpg"> 
+            </a>
+            <a href="images/4.jpg" data-lightbox="models" data-title="Papa's Death Anniversary">  
+                <img src="images/4.jpg"> 
+            </a>
+            <a href="images/5.jpg" data-lightbox="models" data-title="Papa's Death Anniversary">  
+                <img src="images/5.jpg"> 
+            </a>
+            <a href="images/6.jpg" data-lightbox="models" data-title="Sea">  
+                <img src="images/6.jpg"> 
+            </a>
+            <a href="images/7.jpg" data-lightbox="models" data-title="Beach">  
+                <img src="images/7.jpg"> 
+            </a>
+            <a href="images/8.jpg" data-lightbox="models" data-title="Arts">  
+                <img src="images/8.jpg"> 
+            </a>
+            <a href="images/9.jpg" data-lightbox="models" data-title="Classmates">  
+                <img src="images/9.jpg"> 
+            </a>
+            <a href="images/10.jpg" data-lightbox="models" data-title="Aesthetic">  
+                <img src="images/10.jpg"> 
+            </a>
+            
+        </div>
+    </div>
+    </div>
+    
+        <script src="lightbox-plus-jquery.js"></script>
+    <div class="video-section" id="video-section">
+        <h2>MY VLOG</h2>
+        <center>
+            <video controls height="360" width="640">
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </center>
+    </div>
+   
+    <div class="map-section" id="map-section">
+         <h2>MY LOCATION</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15698.567278245664!2d123.92449529312366!3d10.370497181489151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a9a373015f1585%3A0xced32bd030a45174!2sSto.%20Ni%C3%B1o%20II%20Lower%20Casili%20Consolacion!5e0!3m2!1sen!2sph!4v1699398768839!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+    </div>
+</body>
+</html>
